@@ -1,13 +1,18 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from listing.models import Band
+from listing.models import Band,Notification
 
 
 def hello(request):
     bands = Band.objects.all()
+    notifications = Notification.objects.all()
     return HttpResponse(f"""
     <h1>Hello Django ! </h1>
-    <p>Mes groupes préféres sont :<p>
+    <p>Les actus !<p>
+    <ul>
+        <li>{notifications[0].title}</li>
+    </ul>
+    <p>Mes groupes préférés sont :<p> 
     <ul>
         <li>{bands[0].name}</li>
         <li>{bands[1].name}</li>
