@@ -11,6 +11,8 @@ def hello(request):
     <p>Les actus !<p>
     <ul>
         <li>{notifications[0].title}</li>
+        <li>{notifications[1].title}</li>
+        <li>{notifications[2].title}</li>
     </ul>
     <p>Mes groupes préférés sont :<p> 
     <ul>
