@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from listing.models import Band, Notification
+from listing.models import Band, Notification, Disc
 
 
 def hello(request):
@@ -13,13 +13,18 @@ def hello(request):
 
 
 def about(request):
-    return HttpResponse('<h1>à propos</h1> <p>Nous adorons merch!</p>')
+    return render(request,
+                  'listing/about.html',)
 
 
 def listings(request):
-    return HttpResponse('<h1>Dernières Annonces pour les articles</h1> <p>MrYéyé - Chrysalide -> vendu</p>')
+    Discs = Disc.objects.all()
+    return render(request,
+                  'listing/listings.html',
+                  {'Discs': Discs},
+                  )
 
 
 def contact(request):
-    return HttpResponse('<h1>Formulaire de contact</h1> <p>Entrez vos coordonnées ci dessous nous vous contacterons '
-                        'prochainement</p>')
+    return render(request,
+                  'listing/contact.html',)

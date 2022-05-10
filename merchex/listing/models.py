@@ -11,3 +11,8 @@ class Band(models.Model):
 
 class Notification(models.Model):
     title = models.fields.CharField(max_length=100)
+
+
+class Disc(models.Model):
+    label = models.fields.CharField(max_length=50)
+    state = models.fields.CharField(max_length=50)
