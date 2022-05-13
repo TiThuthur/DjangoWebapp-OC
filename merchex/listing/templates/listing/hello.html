@@ -2,7 +2,15 @@
 
 {% block content %}
 <h1>Hello Django !</h1>
-<p>J'ai {{bands|length}} groupes préférés, les voici :</p>
+<p>J'ai
+    {% if bands|length < 5 %}
+        peu de
+    {%elif bands.length > 3 %}
+        beaucoup
+    {% else %}
+        quelques
+    {% endif %}
+    groupes préférés, les voici :</p>
 
 <ul>
     {%for band in bands %}
