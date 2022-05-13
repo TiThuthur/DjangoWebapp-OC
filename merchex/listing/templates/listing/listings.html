@@ -2,5 +2,9 @@
 
 {% block content%}
         <h1>Dernières Annonces pour les articles</h1>
-        <p>{{Discs.0.label}} -> {{Discs.0.state}}</p>
+        <p>{{Goodies.0.label}} -> {{%if Discs.0.sold = True%}}
+                Vendue
+        {% else %}
+                En stock
+        {% end if %}</p>
 {% endblock%}

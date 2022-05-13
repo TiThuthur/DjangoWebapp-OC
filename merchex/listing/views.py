@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from listing.models import Band, Notification, Disc
+from listing.models import Band, Notification, Goodies
 
 
 def hello(request):
