@@ -1,20 +1,22 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from listing.models import Band, Notification, Goodies
+from listing.models import Band, Notification, Goodies  # add of the models create in models.py
 
 
-def hello(request):
-    bands = Band.objects.all()
+def hello(request):  # config of the Hello page URL
+    bands = Band.objects.all()  # input of all occurrence of the DB about Band() model
     notifications = Notification.objects.all()
-    return render(request,
-                  'listing/hello.html',
-                  {'bands': bands}
+    return render(request,  # here we input the request parameter about http request for render the pattern we want
+                  'listing/hello.html',  # path since .\merchex\listing\templates\
+                  {'bands': bands}  # add of the tag create upper
                   )
+
+# the pattern is the same downer as the hello function
 
 
 def about(request):
     return render(request,
-                  'listing/about.html',)
+                  'listing/about.html', )
 
 
 def listings(request):
@@ -27,4 +29,4 @@ def listings(request):
 
 def contact(request):
     return render(request,
-                  'listing/contact.html',)
+                  'listing/contact.html', )

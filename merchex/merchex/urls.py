@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from listing import views
+from listing import views  # ad par AG, application create for the Web app Merchex
 
-urlpatterns = [
+urlpatterns = [  # list of the url create by AG
     path('admin/', admin.site.urls),  # don't forget comma
     path('hello/', views.hello),
     path('about-us/', views.about),
